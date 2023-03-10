@@ -118,7 +118,7 @@ function validateDate()
         return false;
     }
     userDate = new Date(document.getElementById("date").value)
-    if(!(userDate<=todaydate))
+    if((userDate=>todaydate))
     {
         dateSpan.innerHTML="*Give valid date";
         return false;
