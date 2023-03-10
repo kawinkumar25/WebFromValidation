@@ -110,15 +110,10 @@ function validateWeight()
 
 function validateDate()
 {
-    let userDate = document.getElementById("date").value;
+    let userDate = new Date(document.getElementById("date").value);
     let todaydate = new Date();
-    if(userDate=='')
-    {
-        dateSpan.innerHTML="*Give any date";
-        return false;
-    }
-    userDate = new Date(document.getElementById("date").value)
-    if((userDate=>todaydate))
+    
+    if((userDate>=todaydate))
     {
         dateSpan.innerHTML="*Give valid date";
         return false;
@@ -128,7 +123,6 @@ function validateDate()
         dateSpan.innerHTML="";
         return true;
     }
-    
 }
 
 function book()
